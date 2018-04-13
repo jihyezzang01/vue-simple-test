@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Menu from '@/components/Menu';
-import OrderList from '@/components/OrderList';
+import HelloWorld from '@/components/HelloWorld';
+import Menu from '@/components/MenuRouter';
+import TodoList from '@/components/TodoList';
 
 Vue.use(Router);
 
@@ -9,13 +10,18 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Menu',
-      component: Menu,
+      name: 'HelloWorld',
+      component: HelloWorld,
     },
     {
-      path: '/orders',
-      name: 'OrderList',
-      component: OrderList,
+      path: '/todos',
+      name: 'TodoList',
+      component: TodoList,
+    },
+    {
+      path: '/menu',
+      name: 'Menu',
+      component: Menu,
     },
   ],
 });
