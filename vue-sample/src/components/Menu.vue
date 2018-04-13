@@ -1,5 +1,5 @@
 <template>
-  <div class="menu">
+  <div class="page">
     <h1 class="title">Menu</h1>
     <div class="divider" />
     <div class="divider" />
@@ -9,7 +9,7 @@
         <button @click="order(item.type)">order</button>
       </li>
     </ul>
-    <router-link class="link-button" to="/orders" tag="button">OrderList</router-link>
+    <router-link class="link-button" to="/orders" tag="button">Order List</router-link>
   </div>
 </template>
 
@@ -30,10 +30,10 @@ export default {
 </script>
 
 <style scoped>
-.menu {
+.page {
   margin: auto;
-  min-width: 500px;
-  max-width: 800px;
+  min-width: 400px;
+  max-width: 600px;
 }
 
 .divider {
@@ -76,6 +76,7 @@ li button:hover {
 
 .link-button {
   position: relative;
+  width: 10em;
+  height: 3em;
 }
-
 </style>
