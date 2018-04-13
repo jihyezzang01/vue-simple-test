@@ -35,22 +35,18 @@ export default new Vuex.Store({
     },
     CLEAR_ORDER(state, id) {
       let index = -1;
+
+      // find index of item
       for (let i = 0; i < state.order.items.length; i += 1) {
         if (state.order.items[i].id === id) {
           index = i;
           break;
         }
       }
-      console.log(`index: ${index}, id: ${id}`);
+
       if (index !== -1) {
         state.order.items.splice(index, 1);
       }
     },
-  },
-  actions: {
-    //
-  },
-  getters: {
-    //
   },
 });
