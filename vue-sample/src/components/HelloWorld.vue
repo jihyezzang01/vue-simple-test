@@ -5,10 +5,10 @@
     <h2>Sample Components</h2>
     <ul>
       <li>
-        <router-link to="/menu">Menu</router-link>
+        <router-link to="/menu">SimpleMenu</router-link>
       </li>
       <li>
-        <router-link to="/todos">TODO List</router-link>
+        <router-link to="/cart">SimpleCart</router-link>
       </li>
     </ul>
   </div>
