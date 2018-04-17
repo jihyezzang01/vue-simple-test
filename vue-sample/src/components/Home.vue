@@ -1,36 +1,36 @@
 <template>
   <div class="page">
     <header>
-      <h1 class="title">Home</h1>
-      <div class="divider" />
-      <div class="divider" />
+      <title-bar title="Home" />
     </header>
     <div class="items">
       <div v-for="item in items" :key="item.id">
         <item class="item" :item="item" />
       </div>
     </div>
-    <router-link class="link-button" to="/cart" tag="button">
-      Cart ({{cartCount}})
-    </router-link>
+    <link-button :text="cartCounts" path="/cart" />
   </div>
 </template>
 
 <script>
-import Item from "./Item.vue";
+import Item from './Item';
+import TitleBar from './TitleBar';
+import LinkButton from './LinkButton';
 
 export default {
   name: 'Home',
   components: {
+    'title-bar': TitleBar,
+    'link-button': LinkButton,
     item: Item,
   },
   computed: {
     items() {
       return this.$store.state.items;
     },
-    cartCount() {
-      return this.$store.getters.cartProducts;
-    }
+    cartCounts() {
+      return `Cart (${this.$store.getters.cartProducts})`;
+    },
   },
 };
 </script>
@@ -83,22 +83,5 @@ export default {
   border: 1px solid #34495E;
   height: 150px;
   width: 200px;
-}
-
-.link-button {
-  background: #FFF;
-  border: 1px solid #34495E;
-  color: #34495E;
-  cursor: pointer;
-  font-size: 16px;
-  margin-top: 20px;
-  text-align: center;
-  height: 3em;
-  width: 10em;
-}
-
-.link-button:hover {
-  background: #34495E;
-  color: #FFF;
 }
 </style>

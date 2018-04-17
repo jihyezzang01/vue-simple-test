@@ -50,10 +50,8 @@ export default new Vuex.Store({
           ...item,
           count: 1,
         });
-      } else {
-        if (cartItem.count < 9) {
-          cartItem.count += 1;
-        }
+      } else if (cartItem.count < 9) {
+        cartItem.count += 1;
       }
     },
     INCREMENT_ITEM(state, id) {
@@ -76,7 +74,7 @@ export default new Vuex.Store({
           break;
         }
       }
-      if (index != -1) {
+      if (index !== -1) {
         state.cart.items.splice(index, 1);
       }
     },

@@ -11,15 +11,15 @@ export default {
   props: {
     item: {
       type: Object,
-      default: () => ({title: '', id: -1}),
+      default: () => ({ title: '', id: -1 }),
     },
   },
   methods: {
     addItem(id) {
       this.$store.commit('ADD_ITEM', id);
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped>
