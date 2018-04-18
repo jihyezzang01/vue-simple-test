@@ -9,20 +9,20 @@
         <list-item :item="item" />
       </div>
     </div>
-    <link-button text="Home" path="/" />
+    <router-button text="Home" path="/" />
   </div>
 </template>
 
 <script>
 import TitleBar from '../TitleBar';
-import LinkButton from '../LinkButton';
+import RouterButton from '../RouterButton';
 import CartItem from './CartItem';
 
 export default {
   name: 'Cart',
   components: {
     'title-bar': TitleBar,
-    'link-button': LinkButton,
+    'router-button': RouterButton,
     'list-item': CartItem,
   },
   computed: {
@@ -54,5 +54,4 @@ export default {
   border-bottom: 2px solid #34495e;
   padding: 10px;
 }
-
 </style>

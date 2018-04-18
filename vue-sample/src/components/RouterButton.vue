@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'LinkButton',
+  name: 'RouterButton',
   props: {
     text: {
       type: String,

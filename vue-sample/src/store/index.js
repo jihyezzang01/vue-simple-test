@@ -54,17 +54,12 @@ export default new Vuex.Store({
         cartItem.count += 1;
       }
     },
-    INCREMENT_ITEM(state, id) {
-      const item = state.cart.items.find(i => i.id === id);
-      if (item && item.count < 9) {
-        item.count += 1;
+    UPDATE_COUNT(state, { id, count }) {
+      const item = state.cart.items.find(el => el.id === id);
+      if (!item) {
+        return;
       }
-    },
-    DECREMENT_ITEM(state, id) {
-      const item = state.cart.items.find(i => i.id === id);
-      if (item && item.count > 1) {
-        item.count -= 1;
-      }
+      item.count = count;
     },
     REMOVE_ITEM(state, id) {
       let index = -1;

@@ -8,20 +8,20 @@
         <item class="item" :item="item" />
       </div>
     </div>
-    <link-button :text="cartCounts" path="/cart" />
+    <router-button :text="cartCounts" path="/cart" />
   </div>
 </template>
 
 <script>
 import Item from './Item';
 import TitleBar from './TitleBar';
-import LinkButton from './LinkButton';
+import RouterButton from './RouterButton';
 
 export default {
   name: 'Home',
   components: {
     'title-bar': TitleBar,
-    'link-button': LinkButton,
+    'router-button': RouterButton,
     item: Item,
   },
   computed: {
