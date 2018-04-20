@@ -1,9 +1,13 @@
 <template>
-  <div class="label-spinner">
-    <button @click="minus">-</button>
+  <v-layout row align-center>
+    <v-btn outline small  class="mx-2" color="blue-grey" @click="minus">
+      <v-icon small>remove</v-icon>
+    </v-btn>
     <span>{{count}}</span>
-    <button @click="plus">+</button>
-  </div>
+    <v-btn outline small  class="mx-2" color="blue-grey" @click="plus">
+      <v-icon small>add</v-icon>
+    </v-btn>
+  </v-layout>
 </template>
 
 <script>
@@ -39,23 +43,8 @@ export default {
 </script>
 
 <style scoped>
-.label-spinner {
-  border: 1px solid #34495E;
-}
-
-.label-spinner button {
-  background: #FFF;
-  border: none;
-  color: #34495E;
-  cursor: pointer;
-  font-size: 15px;
-  text-align: center;
-  width: 1.2em;
-  height: 2em;
-}
-
-.label-spinner button:hover {
-  background: #34495E;
-  color: #FFF;
+.btn{
+  min-width: 1em;
+  width: 2em;
 }
 </style>

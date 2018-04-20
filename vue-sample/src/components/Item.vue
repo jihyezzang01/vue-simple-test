@@ -1,8 +1,16 @@
 <template>
-<div>
-  <div class="title">{{item.title}}</div>
-  <button @click="addItem(item.id)">ADD TO CART</button>
-</div>
+  <v-card flat class="ma-2" :width="width" :height="height">
+    <v-container  grid-list-xs>
+      <v-card-title  primary-title>
+        <h3>{{item.title}}</h3>
+      </v-card-title>
+      <v-card-actions >
+        <v-btn outline block color="blue-grey" @click="addItem(item.id)">
+          ADD TO CART
+        </v-btn>
+      </v-card-actions>
+    </v-container>
+  </v-card>
 </template>
 
 <script>
@@ -13,6 +21,12 @@ export default {
       type: Object,
       default: () => ({ title: '', id: -1 }),
     },
+    width: {
+      type: Number,
+    },
+    height: {
+      type: Number,
+    },
   },
   methods: {
     addItem(id) {
@@ -21,33 +35,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.item {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: 15px;
-}
-
-.title {
-  margin: 20px;
-}
-
-button {
-  background: #FFF;
-  border: none;
-  border-top: 1px solid #34495E;
-  color: #34495E;
-  cursor: pointer;
-  font-size: 15px;
-  padding: 15px;
-  text-align: center;
-  width: 100%;
-}
-
-button:hover {
-  background: #34495E;
-  color: #FFF;
-}
-</style>

@@ -1,27 +1,29 @@
 <template>
-  <div class="page">
-    <header>
-      <title-bar title="Home" />
-    </header>
-    <div class="items">
-      <div v-for="item in items" :key="item.id">
-        <item class="item" :item="item" />
-      </div>
-    </div>
-    <router-button :text="cartCounts" path="/cart" />
-  </div>
+  <v-container>
+    <v-toolbar flat color="blue-grey dark-4">
+      <v-spacer/>
+      <v-toolbar-title class="white--text">Home</v-toolbar-title>
+      <v-spacer/>
+    </v-toolbar>
+    <v-container>
+      <v-layout row wrap>
+        <div v-for="item in items" :key="item.id">
+          <item :item="item" width="200"/>
+        </div>
+      </v-layout>
+    </v-container>
+    <v-btn outline color="blue-grey dark-3" to="/cart" >
+      {{cartCounts}}
+    </v-btn>
+  </v-container>
 </template>
 
 <script>
 import Item from './Item';
-import TitleBar from './TitleBar';
-import RouterButton from './RouterButton';
 
 export default {
   name: 'Home',
   components: {
-    'title-bar': TitleBar,
-    'router-button': RouterButton,
     item: Item,
   },
   computed: {
@@ -34,54 +36,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.page {
-  margin: auto;
-}
-
-.divider {
-  border-top: 1px solid #8C8B8B;
-  margin-bottom: 2px;
-}
-
-.items {
-  display: flex;
-  flex-wrap: wrap;
-  margin: auto;
-  width: 360px;
-}
-
-@media screen and (min-width: 300px) {
-  .items {
-    width: 230px;
-  }
-}
-@media screen and (min-width: 510px) {
-  .items {
-    width: 470px;
-  }
-}
-@media screen and (min-width: 740px) {
-  .items {
-    width: 700px;
-  }
-}
-@media screen and (min-width: 970px) {
-  .items {
-    width: 930px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .items {
-    width: 1160px;
-  }
-}
-
-.item {
-  background-color: #F6F6F6;
-  border: 1px solid #34495E;
-  height: 150px;
-  width: 200px;
-}
-</style>

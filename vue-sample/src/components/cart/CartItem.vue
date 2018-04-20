@@ -1,11 +1,18 @@
 <template>
-  <div class="list-item">
-    {{item.title}}
-    <div class="list-item-left">
-      <label-spinner :min="1" :max="9" :count="item.count" @update="updateCount"/>
-      <button class="remove-button" @click="remove(item.id)">Delete</button>
-    </div>
-  </div>
+  <v-list-tile class="my-1" :key="item.id">
+    <v-list-tile-content>
+      <v-list-tile-title>{{item.title}}</v-list-tile-title>
+    </v-list-tile-content>
+    <v-list-tile-action>
+      <v-layout row>
+        <label-spinner :min="1" :max="9" :count="item.count" @update="updateCount"/>
+        <v-btn flat class="ml-2" color="blue-grey" @click="remove(item.id)">
+          Delete
+        </v-btn>
+    </v-layout>
+    </v-list-tile-action>
+</v-list-tile>
+
 </template>
 
 <script>
@@ -32,35 +39,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.remove-button {
-  background: #D6D6D6;
-  border: 1px solid #A6A6A6;
-  color: #FFF;
-  cursor: pointer;
-  font-size: 15px;
-  margin-left: 10px;
-  height: 2em;
-}
-
-.remove-button:hover {
-  background: #34495E;
-}
-
-.list-item {
-  align-items: center;
-  border-bottom: 1px solid #34495e;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 10px;
-}
-
-.list-item-left {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-</style>
